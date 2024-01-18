@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const port = process.env.port
 const fruits = require("./fruits.json")
 const logger = require("./logger")
@@ -8,6 +9,7 @@ const logger = require("./logger")
 //Our routes go here
 
 //Middlewhere goes here
+app.use(cors())
 app.use(express.json())
 app.use(logger)
 
